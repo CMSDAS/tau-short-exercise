@@ -16,6 +16,9 @@ To run the notebooks with regular CERN resources:
 * Copy-paste https://github.com/cmsdas/tau-short-exercise.git
 * You're all set and can click on the two exercises, `tau_short_exercise_1.ipynb` and `tau_short_exercise_2.ipynb`
 
+If you finished the exercise, it would be great to send an email to cmsdas-cern-facilitators-tau@SPAMDELETETHIScern.ch with the information whether you were able to successfully tackle the exercise and ideally also with pointers to finished notebooks, either linked on github, made available as exported webpage or PDF, etc
+
+
 ### Alternative way to run the exercise
 
 The exercise can also be run on any system that has Python 3, ROOT including PyROOT, and jupyter installed.
