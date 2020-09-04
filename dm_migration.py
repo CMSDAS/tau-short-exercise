@@ -7,11 +7,11 @@ cms_style(gStyle)
 gStyle.SetTitleOffset(1.65, "Y")
 gStyle.SetPadLeftMargin(0.20)
 
-def dm_migration(tree, tau_dm_string=None, labels=None, gen_cut='tau_genpt>20 && abs(tau_geneta)<2.3', title='', formats=[]):
+def dm_migration(tree, tau_decayMode_string=None, labels=None, gen_cut='tau_gen_pt>20 && abs(tau_gen_eta)<2.3', title='', formats=[]):
     '''Creates a decay mode migration plot.
     Parameters:
         tree (ROOT TTree): input tree
-        tau_dm_string (str): draw expression that maps the decay modes onto ints 
+        tau_decayMode_string (str): draw expression that maps the decay modes onto ints 
                              (-2: undefined, used only for reco axis)
                              (-1 and following: regular decay modes)
         labels (list of str): labels for
@@ -19,13 +19,13 @@ def dm_migration(tree, tau_dm_string=None, labels=None, gen_cut='tau_genpt>20 &&
         formats (list of str): picture formats used for output plot
 
     '''
-    if not tau_dm_string:
-        tau_dm_string = ('-2'
-                         '+ (tau_pt>20 && tau_dm>=0 && tau_dm <200)*(1 ' # will contain reco DM 5 and 6 and other gen DMs
-                            '+ (tau_dm==0)'
-                            '+ 2*(tau_dm==1||tau_dm==2)'
-                            '+ 3*(tau_dm==10)'
-                            '+ 4*(tau_dm==11))'
+    if not tau_decayMode_string:
+        tau_decayMode_string = ('-2'
+                         '+ (tau_pt>20 && tau_decayMode>=0 && tau_decayMode <200)*(1 ' # will contain reco DM 5 and 6 and other gen DMs
+                            '+ (tau_decayMode==0)'
+                            '+ 2*(tau_decayMode==1||tau_decayMode==2)'
+                            '+ 3*(tau_decayMode==10)'
+                            '+ 4*(tau_decayMode==11))'
             )
 
 
@@ -36,7 +36,7 @@ def dm_migration(tree, tau_dm_string=None, labels=None, gen_cut='tau_genpt>20 &&
 
     n_l = len(labels)
     h_migration = TH2F('migration{}'.format(title), '', n_l-1, -1., n_l-2., n_l, -2, n_l-2.)
-    tree.Project(h_migration.GetName(), tau_dm_string+':'+tau_dm_string.replace('tau_', 'tau_gen'), gen_cut)
+    tree.Project(h_migration.GetName(), tau_decayMode_string+':'+tau_decayMode_string.replace('tau_', 'tau_gen_'), gen_cut)
 
     for y_bin in range(1, h_migration.GetYaxis().GetNbins()+1):
         h_migration.GetYaxis().SetBinLabel(y_bin, labels[y_bin-1])
