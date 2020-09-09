@@ -16,8 +16,9 @@ To run the notebooks with regular CERN resources:
 * Copy-paste https://github.com/cmsdas/tau-short-exercise.git
 * You're all set and can click on the two exercises, `tau_short_exercise_1.ipynb` and `tau_short_exercise_2.ipynb`
 
-If you finished the exercise, it would be great to send an email to cmsdas-cern-facilitators-tau@SPAMDELETETHIScern.ch with the information whether you were able to successfully tackle the exercise and ideally also with pointers to finished notebooks, either linked on github, made available as exported webpage or PDF, etc
+If you finished the exercise, it would be great to send an email to cmsdas-cern-facilitators-tau@SPAMDELETETHIScern.ch with the information whether you were able to successfully tackle the exercise and ideally also with pointers to finished notebooks, either linked on github, made available as exported webpage or PDF, etc. At the same time, we'd be very interested in getting specific feedback, suggestions, etc, so we can improve the exercise for future usage.
 
+After you finished the exercise, please also fill https://docs.google.com/forms/d/e/1FAIpQLSeBKcR2PZeJnjA2uDFCVbQXWjIRBOa2YuU4B4X50SY6DHPU2w/viewform
 
 ### Alternative way to run the exercise
 
